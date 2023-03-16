@@ -87,15 +87,7 @@ WSGI_APPLICATION = 'authors_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'authors-live',
-        'USER': 'postgres',
-        'PASSWORD':'Abhishek123',
-        'HOST': 'localhost',
-    }
-}
+DATABASES = {"default": env.db("DATABASE_URL")}
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 PASSWORD_HASHERS = [
@@ -129,7 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Asia/Delhi'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
